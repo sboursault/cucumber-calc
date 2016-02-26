@@ -7,9 +7,9 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin="pretty",
         strict = true,
-        snippets=SnippetType.CAMELCASE,
+        //snippets=SnippetType.CAMELCASE,
         features = {"features"},
-        glue = {"com.sb.cucumbercalc.stepdefs.Steps"},
+        glue = {"com.sb.cucumbercalc.steps"},
         dryRun=false)
 public class RunCukesTest {
 }

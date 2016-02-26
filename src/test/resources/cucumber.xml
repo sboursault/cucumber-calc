@@ -7,12 +7,19 @@
             http://www.springframework.org/schema/context
             http://www.springframework.org/schema/context/spring-context.xsd">
     <context:annotation-config/>
-    <context:component-scan base-package="com.sb.cucumbercalc" />
 
-    <bean class="org.openqa.selenium.support.events.EventFiringWebDriver"
-          destroy-method="quit">
+    <context:component-scan base-package="com.sb.cucumbercalc"/>
+
+    <bean class="org.openqa.selenium.support.events.EventFiringWebDriver">
+        <!--destroy-method="quit"-->
         <constructor-arg>
             <bean class="org.openqa.selenium.firefox.FirefoxDriver" />
+            <!--<bean class="org.openqa.selenium.chrome.ChromeDriver" />-->
+            <!--<bean class="org.openqa.selenium.htmlunit.HtmlUnitDriver">
+                <constructor-arg type="boolean" value="true"/>
+            </bean>-->
         </constructor-arg>
     </bean>
+
+
 </beans>
