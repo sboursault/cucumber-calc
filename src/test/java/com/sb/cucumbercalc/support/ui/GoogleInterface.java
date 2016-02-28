@@ -15,9 +15,6 @@ import javax.annotation.Resource;
 @Scope("cucumber-glue")
 public class GoogleInterface {
 
-    // urls
-    public static final String GOOGLE_URL = "http://www.google.com";
-
     // css selectors
     public static final String SEARCH_FIELD = "#lst-ib";
 
@@ -28,10 +25,12 @@ public class GoogleInterface {
     private CalculatorInterface calculator;
 
     public void search(String keywords) {
-        webDriver.get(GOOGLE_URL);
         WebElement searchField = webDriver.findElement(SEARCH_FIELD);
-        searchField.sendKeys(keywords);
-        searchField.submit();
+        if (!searchField.getText().equals(keywords)) {
+            searchField.clear();
+            searchField.sendKeys(keywords);
+        }
+        //searchField.submit();
     }
 
     public void calculatorShouldBeDisplayed() {
@@ -44,4 +43,8 @@ public class GoogleInterface {
         return calculator;
     }
 
+    public void openCalculator() {
+        search("calculatrice");
+        calculatorShouldBeDisplayed();
+    }
 }

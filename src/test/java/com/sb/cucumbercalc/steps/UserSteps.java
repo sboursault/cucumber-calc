@@ -2,6 +2,7 @@ package com.sb.cucumbercalc.steps;
 
 import com.sb.cucumbercalc.support.ui.GoogleInterface;
 import cucumber.api.PendingException;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import javax.annotation.Resource;
@@ -22,6 +23,11 @@ public class UserSteps {
     @Then("^the calculator should be displayed$")
     public void theCalculatorShouldBeDisplayed() throws Throwable {
         googleInterface.calculatorShouldBeDisplayed();
+    }
+
+    @Given("^I have opened the calculator$")
+    public void i_have_opened_the_calculator() throws Throwable {
+        googleInterface.openCalculator();
     }
 
     @When("^I add (\\d+) to (\\d+)$")

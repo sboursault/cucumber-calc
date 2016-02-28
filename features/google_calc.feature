@@ -6,6 +6,12 @@ Feature: Google calculator
     When I search for "calculatrice" in google
     Then the calculator should be displayed
 
-  Scenario: the calculator manages additions
-    When I add 1 to 5
-    Then the result should be 6
+  Scenario Outline: the calculator manages additions
+    Given I have opened the calculator
+    When I add <a> to <b>
+    Then the result should be <result>
+
+    Examples:
+      |  a  |  b | result |
+      | 16  |  5 |    21  |
+      | 13  | 25 |    38  |
