@@ -1,4 +1,4 @@
-package com.sb.cucumbercalc.support.matchers;
+package com.sb.cucumbercalc.support.ui.utils;
 
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
@@ -6,7 +6,7 @@ import org.hamcrest.Matcher;
 import org.openqa.selenium.WebElement;
 
 /**
- * Created by me on 26/02/16.
+ * Created by sboursault on 26/02/16.
  */
 public class WebElementMatchers {
 
