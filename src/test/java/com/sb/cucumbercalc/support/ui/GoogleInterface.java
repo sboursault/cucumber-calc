@@ -27,10 +27,11 @@ public class GoogleInterface {
     public void search(String keywords) {
         WebElement searchField = webDriver.findElement(SEARCH_FIELD);
         if (!searchField.getText().equals(keywords)) {
+            // this check was added to run tests faster,
+            // but it doesn't work (searchField.getText() is always empty)
             searchField.clear();
             searchField.sendKeys(keywords);
         }
-        //searchField.submit();
     }
 
     public void calculatorShouldBeDisplayed() {

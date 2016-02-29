@@ -1,5 +1,7 @@
 package com.sb.cucumbercalc.support.ui.utils;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,8 +18,29 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElemen
  */
 public class EnhancedEventFiringWebDriver extends EventFiringWebDriver {
 
-    public EnhancedEventFiringWebDriver(WebDriver driver) {
+    private static Log LOGGER = LogFactory.getLog(EnhancedEventFiringWebDriver.class);
+
+    public EnhancedEventFiringWebDriver(WebDriver driver, boolean closeBrowserAfterTests) {
         super(driver);
+
+        if (closeBrowserAfterTests) {
+            // a better way to implement this would be to define the destroy-method on the spring bean,
+            // but I didn't find how to parameterize it.
+            Runtime.getRuntime().addShutdownHook(new Thread() {
+                @Override
+                public void run() {
+                    try {
+                        quit();
+                    } catch (Throwable t) {
+                        LOGGER.warn(t.getMessage());
+                    }
+                }
+            });
+        }
+    }
+
+    public EnhancedEventFiringWebDriver(WebDriver driver) {
+        this(driver, true);
     }
 
     /**

@@ -19,7 +19,7 @@ public class Hooks {
 
     @Before
     public void navigateToGooglePage() {
-        if (!webDriver.getCurrentUrl().contains(GOOGLE_URL)) {
+        if (!webDriver.getCurrentUrl().startsWith(GOOGLE_URL)) {
             webDriver.get(GOOGLE_URL);
         }
     }
