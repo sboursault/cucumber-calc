@@ -12,9 +12,9 @@ Using maven, go to you project's folder and run :
 
 Cucumber was designed to help tech and business people to work together.
 
-Practically, this means tech people should never modify a feature file without validation from the PO (otherwise, there's no collaboration ;) )
+Practically, this means tech people should never modify a feature file without validation from the PO - otherwise, there's no collaboration ;)
 
-Also, we should spend time to make them easy to read.
+Also, we should spend time to make feature files easy to read.
 
 Feature files are placed in a folder "features" at the root of the project. They are named using snake case (https://en.wikipedia.org/wiki/Snake_case).
 
@@ -24,11 +24,11 @@ The feature description is the text just under the feature name. They can make u
 
 They should at least answer these questions :
 - What is the goal of this feature ?
-- Why shoudl we spend time on it ?
+- Why should we spend time on it ?
 
 ### Scenario names
 
-Scenario names help to read the feature file and they are the first thing you'll see when a scenario comes comes to fail.
+Scenario names help to read the feature file and they are the first thing you'll see when a scenario comes to fail.
 
 They must be concise and expressive. The trick is to summarize the context and event (the Given and When parts) and avoid mentionning the outcoume of the scenario.
 
@@ -50,4 +50,26 @@ This is important to avoid ambiguity about the intent of each step.
 
 ## Implementing glue code
 
-TODO
+We want our test suite to run fast, so that we can run it more often, and give feedback earlier when a bug appear.
+
+In addition, a failing test should thell what went wrong
+
+
+
+### Whenever you can, check 
+You may think it's useless, but the day a test comes to fail, it'll help to understand the cause of the failure.
+
+
+### Interacting with UI
+
+All the glue code related to page details (e.g. dom resolutions) should be hidden in the support.ui package, in a class representing a particular page or a part of a page.
+http://martinfowler.com/bliki/PageObject.html is a worth reading it.
+
+
+### Understanding spring scopes
+
+Most of the objects (steps, hooks and support objects) are instanciated in the cucumber scope. This means they are relaoded at the beginning of each scenario.
+This helps to write isolated and more stable tests.
+The web driver is an exception, because this one would be to costly to reload several times.
+    
+
