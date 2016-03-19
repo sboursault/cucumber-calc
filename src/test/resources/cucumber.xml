@@ -7,7 +7,7 @@
             http://www.springframework.org/schema/context
             http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:property-placeholder location="classpath:cucumber.properties" />
+    <context:property-placeholder location="classpath:cucumber.properties, classpath:environment.properties" />
 
     <context:annotation-config/>
 
