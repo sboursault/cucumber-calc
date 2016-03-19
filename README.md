@@ -2,11 +2,11 @@
 
 Cucumber is an open-source tool for executable specification.
 
-For this example project, I wrote a feature file to verify the behavior of the google calculator.
+For this example project, I wrote a .feature file to verify the behavior of the google calculator.
 
 ##  Running tests
 
-To run the project with maven, go to you project's folder and run :
+To run the project with maven, go to you project's folder and run:
 
     mvn clean test
 
@@ -14,12 +14,12 @@ To run the project with maven, go to you project's folder and run :
 
 Cucumber was designed to help tech and business people to work together.
 
-Practically, this means tech people should never modify a feature file without validation from the PO - otherwise, this is not collaboration ;)
+Practically, this means tech people should never modify a .feature file without validation from the PO - otherwise, this is not collaboration ;)
 
-Also, we should spend time to make feature files easy to read.
+Also, we should spend time to make .feature files easy to read.
 
 Convention:
-- Feature files are placed in the folder /features.
+- .feature files are placed in the folder /features.
 - They are named using snake case (https://en.wikipedia.org/wiki/Snake_case).
 
 ### Feature description
@@ -32,7 +32,7 @@ It should at least answer these questions:
 
 ### Scenario names
 
-Scenario names help to read the feature file and they are the first thing we'll see when a scenario comes to fail.
+Scenario names help to read the .feature file and they are the first thing we'll see when a scenario comes to fail.
 
 They must be both concise and expressive. The trick is to summarize the context and event (the Given and When parts) and avoid mentionning the outcoume of the scenario.
 
@@ -43,7 +43,8 @@ Use these tenses to write your steps
 - When -> present
 - Then -> conditional
     
-Example :
+Example:
+
     Given I have opened the calculator
     When I add 5 to 6
     Then the result should be 11
@@ -70,7 +71,7 @@ Each test must be able to run in isolation, so that it never depends on the resu
 
 The problem with non-deterministism is that people will lose confidence in the test suite. This is the last thing we want.
 
-This post gives tracks on how to fight against them : http://martinfowler.com/articles/nonDeterminism.html
+This post gives tracks on how to fight against them: http://martinfowler.com/articles/nonDeterminism.html
 
 ### Interacting with UI
 
@@ -80,7 +81,7 @@ Remember: we write tests to facilitate change, not to slow them.
 
 To facilitate ui refactoring, all the glue code related to page details (e.g. dom resolutions) should be hidden in the package support.ui, organized in classes which represents the pages of the ui (or the parts of some pages).
 
-More on the subject : http://martinfowler.com/bliki/PageObject.html (yep, him again!)
+More on the subject: http://martinfowler.com/bliki/PageObject.html (yep, him again!)
 
 ### Understanding spring scopes
 
@@ -91,4 +92,6 @@ This helps to write isolated tests.
 The web driver is an exception, because this one would be to costly to reload again and again.
 
 
+## Tools
 
+IntelliJ is the recommanded tool to work with cucumber. If you open a .feature file, IntelliJ suggests to install the *Gherkin* plugin. In addition, you should install the *Cucumber for JVM* plugin.
