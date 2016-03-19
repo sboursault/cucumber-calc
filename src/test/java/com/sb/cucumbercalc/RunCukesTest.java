@@ -5,7 +5,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
 import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
-@CucumberOptions(plugin={"pretty", "html:target/html"},
+@CucumberOptions(plugin={"pretty", "html:target/html", "json:target/cucumber.json"},
         features = {"features"},
         glue = {"com.sb.cucumbercalc.steps", "com.sb.cucumbercalc.hooks"},
         name = "",
