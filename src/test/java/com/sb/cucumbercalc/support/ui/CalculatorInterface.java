@@ -1,6 +1,6 @@
 package com.sb.cucumbercalc.support.ui;
 
-import com.sb.cucumbercalc.support.ui.utils.EnhancedEventFiringWebDriver;
+import com.sb.cucumbercalc.support.ui.drivers.EnhancedEventFiringWebDriver;
 import static org.hamcrest.Matchers.*;
 
 import org.openqa.selenium.WebElement;

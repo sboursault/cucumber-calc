@@ -8,7 +8,7 @@ For this example project, I wrote a .feature file to verify the behavior of the 
 
 To run the project with maven, go to you project's folder and run:
 
-    mvn clean test
+    mvn clean install
 
 ## Writing features files
 

@@ -1,9 +1,10 @@
 package com.sb.cucumbercalc.support.ui;
 
-import static com.sb.cucumbercalc.support.ui.utils.WebElementMatchers.*;
 import static org.junit.Assert.*;
 
-import com.sb.cucumbercalc.support.ui.utils.EnhancedEventFiringWebDriver;
+import com.sb.cucumbercalc.support.ui.drivers.EnhancedEventFiringWebDriver;
+import static org.hamcrest.Matchers.*;
+import static org.openqa.selenium.lift.Matchers.*;
 import org.openqa.selenium.WebElement;
 
 import org.springframework.context.annotation.Scope;
@@ -36,7 +37,7 @@ public class GoogleInterface {
 
     public void calculatorShouldBeDisplayed() {
         WebElement resultField = webDriver.findAjaxElement(CalculatorInterface.CALCULATOR_FIELD);
-        assertThat(resultField, isDisplayed());
+        assertThat(resultField, is(displayed()));
     }
 
     public CalculatorInterface getCalculator() {

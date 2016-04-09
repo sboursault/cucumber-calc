@@ -1,7 +1,7 @@
 package com.sb.cucumbercalc.hooks;
 
 
-import com.sb.cucumbercalc.support.ui.utils.EnhancedEventFiringWebDriver;
+import com.sb.cucumbercalc.support.ui.drivers.EnhancedEventFiringWebDriver;
 import cucumber.api.java.Before;
 import org.springframework.beans.factory.annotation.Value;
 

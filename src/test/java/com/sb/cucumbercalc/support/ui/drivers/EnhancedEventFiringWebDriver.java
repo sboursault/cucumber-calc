@@ -1,4 +1,4 @@
-package com.sb.cucumbercalc.support.ui.utils;
+package com.sb.cucumbercalc.support.ui.drivers;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -13,14 +13,22 @@ import java.util.concurrent.TimeUnit;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 
+
+
 /**
  * Created by sboursault 27/02/16.
  */
 public class EnhancedEventFiringWebDriver extends EventFiringWebDriver {
 
+    static {
+        //File file = new File("/usr/bin/phantomjs");
+        //System.setProperty("phantomjs.binary.path", file.getAbsolutePath());
+    }
+
     private static Log LOGGER = LogFactory.getLog(EnhancedEventFiringWebDriver.class);
 
     public EnhancedEventFiringWebDriver(WebDriver driver, boolean closeBrowserAfterTests) {
+
         super(driver);
 
         if (closeBrowserAfterTests) {
