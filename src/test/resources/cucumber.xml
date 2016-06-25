@@ -13,14 +13,4 @@
 
     <context:component-scan base-package="com.sb.cucumbercalc"/>
 
-    <bean class="com.sb.cucumbercalc.support.ui.utils.EnhancedEventFiringWebDriver">
-        <constructor-arg>
-            <bean class="org.openqa.selenium.firefox.FirefoxDriver" />
-            <!--<bean class="org.openqa.selenium.chrome.ChromeDriver" />-->
-            <!--<bean class="org.openqa.selenium.htmlunit.HtmlUnitDriver">
-                <constructor-arg type="boolean" value="true"/>
-            </bean>-->
-        </constructor-arg>
-        <constructor-arg type="boolean" value="${cucumber.closeBrowserAfterTests}"/>
-    </bean>
 </beans>
