@@ -19,11 +19,11 @@ import static org.junit.Assert.assertThat;
  * <pre>
  *     import static org.hamcrest.Matchers.*;
  *     [...]
- *     AssertSampler.pollUntilResultOf(new Sample<String>() {
+ *     AssertSampler.pollUntil(new Sample<Integer>() {
  *         public String test() {
- *             return service.getState();
+ *             assertThat(3, is(3));
  *         }
- *     }, is(expected));
+ *     });
  * </pre>
  *
  * @author sboursault on 20/02/16.
